@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
-    <parameter name="Username" value="admin"/>
-    <parameter name="Password" value="123"/>
+  <listeners>
+    <listener class-name="generatereport.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="ExtendReport(failed)">
     <classes>
-      <class name="supermarketproject.LoginPageTest">
+      <class name="supermarketproject.HomePageTest">
         <methods>
           <include name="Quit"/>
-          <include name="verifyValidCredentials" invocation-numbers="0"/>
+          <include name="verifyLogout"/>
           <include name="browserInitialising"/>
         </methods>
-      </class> <!-- supermarketproject.LoginPageTest -->
+      </class> <!-- supermarketproject.HomePageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- ExtendReport(failed) -->
 </suite> <!-- Failed suite [Suite] -->

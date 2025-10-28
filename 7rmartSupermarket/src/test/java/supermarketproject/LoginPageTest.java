@@ -1,6 +1,8 @@
 package supermarketproject;
 
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -8,6 +10,7 @@ import org.testng.annotations.Test;
 
 import constance.Constant;
 import pages.LoginPage;
+import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
 
@@ -25,13 +28,15 @@ public class LoginPageTest extends Base {
 	  }
 	
 	@Test
-	  public void verifyInValidCredentials() 
+	  public void verifyInValidCredentials() throws IOException 
 	  {
 		  LoginPage login = new LoginPage(driver);
-		  login.enterUsernameAndPassword("Ash", "123");
+		  String Username=ExcelUtility.getStringData(1, 0,"LoginPageTest");
+		  String Password=ExcelUtility.getIntegerData(1, 1, "LoginPageTest");
+		  login.enterUsernameAndPassword(Username,Password);
 		  login.clickOnLoginButton();
 	  }
-	  
+
 	  @Test
 	  public void verifycredentialsWithCorrectPassword() 
 	  {

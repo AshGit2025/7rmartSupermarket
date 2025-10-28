@@ -20,7 +20,7 @@ public class HomePageTest extends Base {
 		  homepage.clickOnUser();
 		  homepage.clickOnLogout();
 		  
-		  String expected ="Login | 7rmart supermarket";
+		  String expected ="Login | 7rmart supermarket1";
 		  String actual= driver.getTitle();
 		  Assert.assertEquals(actual, expected, Constant.FAILEDLOGOUT);
 		  
