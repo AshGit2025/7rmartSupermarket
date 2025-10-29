@@ -16,19 +16,27 @@ public WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	//@FindBy(xpath="//a[@class='nav-link']//child::img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']") WebElement user;
+	
 	@FindBy(xpath="(//a[@class='nav-link'])[2]") WebElement user;
 	
 	@FindBy(xpath="(//a[@class='dropdown-item'])[2]") WebElement logout;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[1]") WebElement adminUserTile;
 	
-	public void clickOnUser()
+	public HomePage clickOnUser()
 	{
 	
 		user.click();
+		return this;
 			
 	}
-	public void clickOnLogout()
+	public HomePage clickOnLogout()
 	{
-			logout.click();			
+			logout.click();	
+			return this;
+	}
+	public AdminUsers clickOnAdminUserTile()
+	{
+		adminUserTile.click();
+		return new AdminUsers(driver);
 	}
 }

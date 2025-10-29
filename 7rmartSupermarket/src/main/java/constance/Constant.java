@@ -12,4 +12,5 @@ public class Constant {
 	
 	public static final String FILEPATH=System.getProperty("user.dir")+"//src//main//resources//TestData.xlsx";
 	
+	public static final String IMAGEFILE=System.getProperty("user.dir")+"//src//main//resources//image11.jpeg";
 }

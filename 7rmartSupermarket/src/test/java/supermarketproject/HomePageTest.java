@@ -9,18 +9,23 @@ import pages.LoginPage;
 
 public class HomePageTest extends Base {
 
+	HomePage homePage;
+	
 	 @Test
 	  public void verifyLogout() 
 	  {
 		  LoginPage loginpage = new LoginPage(driver);
 		  loginpage.enterUsernameAndPassword("admin", "admin");
-		  loginpage.clickOnLoginButton();
+		  homePage= loginpage.clickOnLoginButton();
+		  homePage.clickOnUser().clickOnLogout();
+		  
+		 /* loginpage.clickOnLoginButton();
 		  
 		  HomePage homepage = new HomePage(driver);
 		  homepage.clickOnUser();
 		  homepage.clickOnLogout();
-		  
-		  String expected ="Login | 7rmart supermarket1";
+		  */
+		  String expected ="Login | 7rmart supermarket";
 		  String actual= driver.getTitle();
 		  Assert.assertEquals(actual, expected, Constant.FAILEDLOGOUT);
 		  

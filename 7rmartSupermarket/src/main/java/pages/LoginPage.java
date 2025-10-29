@@ -23,15 +23,17 @@ public class LoginPage
   @FindBy(xpath="//button[@type='submit']") WebElement loginButton;
   @FindBy(xpath="//p[text()='Dashboard']") WebElement dashboard; // adding assertion
 
-public void enterUsernameAndPassword(String usernameField, String passwordField)
+public LoginPage enterUsernameAndPassword(String usernameField, String passwordField)
 {
 	username.sendKeys(usernameField);
 	password.sendKeys(passwordField);
+	return this;
 }
 
-public void clickOnLoginButton()
+public HomePage clickOnLoginButton()
 {
 	loginButton.click();
+	return new HomePage(driver);
 }
 
 public boolean isHomePageDisplayed()

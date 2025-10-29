@@ -29,7 +29,7 @@ public class AdminUsers {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[1]") WebElement adminUserTile;
+	
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") WebElement newButton;
 	@FindBy(id="username") WebElement usernameTextField;
 	@FindBy(xpath="(//input[@class='form-control'])[3]") WebElement passwordTextField;
@@ -39,33 +39,34 @@ public class AdminUsers {
 	
 	
 	
-	public void clickOnAdminUserTile()
-	{
-		adminUserTile.click();
-	}
 	
-	public void createNewAdminUser()
+	
+	public AdminUsers createNewAdminUser()
 	{
 		newButton.click();
+		return this;
 	}
 	
-	public void enterAdminUsernameAndPassword(String Username, String Password)
+	public AdminUsers enterAdminUsernameAndPassword(String Username, String Password)
 	{
 		usernameTextField.sendKeys(Username);
 		passwordTextField.sendKeys(Password);
+		return this;
 	}
 		
-	public void clickUserTypefield()
+	public AdminUsers clickUserTypefield()
 	{
 		pageUtility.methodSelectByValue(userTypeDropDown, "staff");
 	//	Select selectUserType = new Select(userTypeDropDown);
 		//selectUserType.selectByValue("staff");
+		return this;
 	}
 	
-	public void clickOnSaveButton()
+	public AdminUsers clickOnSaveButton()
 	{		
 		waitUtility.waitForElementToClick(driver,saveButton );
 		saveButton.click();
+		return this;
 	}
 	
 	public boolean getSuccessMessageText()
