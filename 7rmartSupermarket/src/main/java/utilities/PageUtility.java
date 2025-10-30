@@ -55,7 +55,7 @@ public class PageUtility {
 	 public void methodJavascriptExecuterForWindowScrolldown() 
 	  {
 		 JavascriptExecutor executer = (JavascriptExecutor) driver;
-		 executer.executeScript("window.scrollBy(0,2000)");
+		 executer.executeScript("window.scrollBy(0,5000)");
 		  
 	  }
 	 

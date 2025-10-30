@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import constance.Constant;
 import utilities.FileUploadUtility;
+import utilities.WaitUtility;
 
 public class ManageCategory {
 	
@@ -19,7 +21,7 @@ public class ManageCategory {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[9]") WebElement manageCategoryTile;
+	
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") WebElement NewButton;
 	@FindBy(xpath="//input[@type='text']") WebElement enterCategory;
 	@FindBy(id="134-selectable") WebElement selectGroup;
@@ -29,48 +31,63 @@ public class ManageCategory {
 	@FindBy(xpath="//button[@type='submit']") WebElement saveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert;
 	
-	public void clickOnManageCategoryTile()
-	{
-		manageCategoryTile.click();
-	}
 	
-	public void clickOnAddNewCategoryButton()
+	
+	public ManageCategory clickOnAddNewCategoryButton()
 	{
 		NewButton.click();
+		return this;
 	}
 	
-	public void clickOnEnterCategory()
+	public ManageCategory clickOnEnterCategory()
 	{
 		enterCategory.sendKeys(" category info as Veerapan");
+		return this;
 	}
 	
-	public void clickOnSelectGroup()
+	public ManageCategory clickOnSelectGroup()
 	{
 		selectGroup.click();
+		return this;
 	}
 	
-	public void clickOnChooseFile()
+	public ManageCategory clickOnChooseFile()
 	{
 		upload.sendKeysForFileUpload(chooseFileButton, Constant.IMAGEFILE);
+		return this;
 	}
 	
+	public ManageCategory methodJavascriptExecuterForWindowScrolldown() 
+	  {
+		 JavascriptExecutor executer = (JavascriptExecutor) driver;
+		 executer.executeScript("window.scrollBy(0,40000)");
+		 return this;
+	  }
 	
-	//robot class method
-	
-	
-	public void clickOnRadioButton2OfShowOnTopMenu()
+	public ManageCategory clickOnRadioButton2OfShowOnTopMenu()
 	{
 		radio2.click();
+		return this;
 	}
 
-	public void clickOnRadioButton3OfShowOnLeftMenu()
+	public ManageCategory clickOnRadioButton3OfShowOnLeftMenu()
 	{
 		radio3.click();
+		return this;
 	}
 	
-	public void clickOnSavebutton()
+	public ManageCategory waitForSaveButton()
+	{
+		WaitUtility wait = new WaitUtility();
+		wait.waitForElementToClick(driver, saveButton);
+		return this;
+	}
+	
+	
+	public ManageCategory clickOnSavebutton()
 	{
 		saveButton.click();
+		return this;
 	}
 	
 	public boolean checkAlertDisplayed()

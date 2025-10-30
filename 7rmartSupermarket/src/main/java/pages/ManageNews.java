@@ -16,30 +16,30 @@ public class ManageNews {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[7]") WebElement manageNewsTile;
+	
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") WebElement newButton;
 	@FindBy(xpath="//textarea[@id='news']") WebElement newsInputField;
 	@FindBy(xpath="//button[@type='submit']") WebElement saveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement successMessage;
 	
-	public void clickOnManageNewsTile()
-	{
-		manageNewsTile.click();
-	}
 	
-	public void clickOnNewButton()
+	
+	public ManageNews clickOnNewButton()
 	{
 		newButton.click();
+		return this;
 	}
 	
-	public void enterInputNewsField()
+	public ManageNews enterInputNewsField()
 	{
 		newsInputField.sendKeys("Veerappan Killed in an Encounter!!");
+		return this;
 	}
 	
-	public void clickOnSaveButton()
+	public ManageNews clickOnSaveButton()
 	{
 		saveButton.click();
+		return this;
 	}
 	
 	public boolean getAlertMessage()

@@ -6,12 +6,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constance.Constant;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategory;
 import utilities.ExcelUtility;
+import utilities.PageUtility;
 
 
 public class ManageCategoryTest extends Base {
+	HomePage homePage;
+	ManageCategory manageCategory;
+	
   @Test
   public void ToVerifyAddNewCategory() throws IOException 
   {
@@ -20,7 +25,14 @@ public class ManageCategoryTest extends Base {
 	  String Username = ExcelUtility.getStringData(1, 0, "AdminLoginCredential");
 	  String Password = ExcelUtility.getStringData(1, 1, "AdminLoginCredential"); 
 	  login.enterUsernameAndPassword(Username, Password);
-	  login.clickOnLoginButton();
+	  homePage = login.clickOnLoginButton();
+	  manageCategory = homePage.clickOnManageCategoryTile();
+	  manageCategory.clickOnAddNewCategoryButton().clickOnEnterCategory()
+	  .clickOnSelectGroup().clickOnChooseFile().methodJavascriptExecuterForWindowScrolldown()
+	  .clickOnRadioButton2OfShowOnTopMenu().clickOnRadioButton3OfShowOnLeftMenu().waitForSaveButton()
+	  .clickOnSavebutton();
+	  
+	  /*login.clickOnLoginButton();
 	  
 	  boolean loginCheck=login.isHomePageDisplayed();
 	  Assert.assertTrue(loginCheck, Constant.ERRORMESSAGEFORLOGIN);
@@ -31,11 +43,15 @@ public class ManageCategoryTest extends Base {
 	  manageCategory.clickOnEnterCategory();
 	  manageCategory.clickOnSelectGroup();
 	  manageCategory.clickOnChooseFile(); 
+	  manageCategory.methodJavascriptExecuterForWindowScrolldown();
+	  
 	  manageCategory.clickOnRadioButton2OfShowOnTopMenu();
 	  manageCategory.clickOnRadioButton3OfShowOnLeftMenu();
-	  manageCategory.clickOnSavebutton();
 	  
-	  manageCategory.checkAlertDisplayed();
+	  manageCategory.waitForSaveButton();
+	  manageCategory.clickOnSavebutton();
+	 */ 
+	  
 	  boolean alertDisplayed =manageCategory.checkAlertDisplayed();
 	  Assert.assertTrue(alertDisplayed, Constant.USERALREADYEXIST);
 	  

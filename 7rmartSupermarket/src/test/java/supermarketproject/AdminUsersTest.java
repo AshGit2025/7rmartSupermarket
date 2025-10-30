@@ -7,10 +7,13 @@ import constance.Constant;
 import pages.AdminUsers;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
 	HomePage homePage;
 	AdminUsers adminUsers;
+	
+	
   @Test(description = "verified new admin user addedd successfully")
   public void createNewAdminUser() 
   {
@@ -18,7 +21,9 @@ public class AdminUsersTest extends Base {
 	  login.enterUsernameAndPassword("admin", "admin");
 	  homePage= login.clickOnLoginButton();
 	  adminUsers= homePage.clickOnAdminUserTile();
-	  adminUsers.createNewAdminUser().enterAdminUsernameAndPassword("Mohanan", "1234")
+	  String Username= FakerUtility.getFirstname();
+	  String Password= FakerUtility.getPassword();
+	  adminUsers.createNewAdminUser().enterAdminUsernameAndPassword(Username, Password)
 	  .clickUserTypefield().clickOnSaveButton();
 	 
 	  /*login.clickOnLoginButton();

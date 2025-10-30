@@ -18,25 +18,36 @@ public WebDriver driver;
 	
 	
 	@FindBy(xpath="(//a[@class='nav-link'])[2]") WebElement user;
-	
 	@FindBy(xpath="(//a[@class='dropdown-item'])[2]") WebElement logout;
 	@FindBy(xpath="(//a[@class='small-box-footer'])[1]") WebElement adminUserTile;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[7]") WebElement manageNewsTile;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[9]") WebElement manageCategoryTile;
 	
 	public HomePage clickOnUser()
 	{
-	
 		user.click();
 		return this;
-			
 	}
+	
 	public HomePage clickOnLogout()
 	{
 			logout.click();	
 			return this;
 	}
+	
 	public AdminUsers clickOnAdminUserTile()
 	{
 		adminUserTile.click();
 		return new AdminUsers(driver);
+	}
+	public ManageNews clickOnManageNewsTile()
+	{
+		manageNewsTile.click();
+		return new ManageNews(driver);
+	}
+	public ManageCategory clickOnManageCategoryTile()
+	{
+		manageCategoryTile.click();
+		return new ManageCategory(driver);
 	}
 }

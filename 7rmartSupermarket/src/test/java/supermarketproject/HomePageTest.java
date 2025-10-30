@@ -11,7 +11,7 @@ public class HomePageTest extends Base {
 
 	HomePage homePage;
 	
-	 @Test
+	 @Test(retryAnalyzer = retry.Retry.class, description = "Verified logout after admin login")
 	  public void verifyLogout() 
 	  {
 		  LoginPage loginpage = new LoginPage(driver);

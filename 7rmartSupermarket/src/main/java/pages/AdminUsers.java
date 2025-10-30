@@ -38,9 +38,6 @@ public class AdminUsers {
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement successAlert;
 	
 	
-	
-	
-	
 	public AdminUsers createNewAdminUser()
 	{
 		newButton.click();
