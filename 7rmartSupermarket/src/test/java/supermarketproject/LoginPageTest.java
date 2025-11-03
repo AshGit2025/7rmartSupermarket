@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import constance.Constant;
+import constants.Constant;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
@@ -27,7 +27,7 @@ public class LoginPageTest extends Base {
 		  Assert.assertTrue(isHomePage, Constant.ERRORMESSAGEFORLOGIN);
 	  }
 	
-	@Test
+	@Test(groups = {"Smoke"})
 	  public void verifyInValidCredentials() throws IOException 
 	  {
 		  LoginPage login = new LoginPage(driver);
@@ -37,7 +37,7 @@ public class LoginPageTest extends Base {
 		  login.clickOnLoginButton();
 	  }
 
-	  @Test
+	  @Test (groups = {"Smoke"})
 	  public void verifycredentialsWithCorrectPassword() 
 	  {
 		  LoginPage login = new LoginPage(driver);

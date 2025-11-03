@@ -1,4 +1,4 @@
-package constance;
+package constants;
 
 public class Constant {
 
@@ -14,5 +14,5 @@ public class Constant {
 	
 	public static final String IMAGEFILE=System.getProperty("user.dir")+"//src//main//resources//image11.jpeg";
 
-	public static final String PAGEURL=System.getenv("user.dir")+"//src//test//resources//config.properties";
+	public static final String PAGEURL=System.getProperty("user.dir")+"//src//test//resources//config.properties";
 }

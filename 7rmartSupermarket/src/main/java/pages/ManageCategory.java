@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import constance.Constant;
+import constants.Constant;
 import utilities.FileUploadUtility;
 import utilities.WaitUtility;
 

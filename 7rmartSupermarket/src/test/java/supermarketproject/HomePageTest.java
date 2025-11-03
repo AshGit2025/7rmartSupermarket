@@ -3,7 +3,7 @@ package supermarketproject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import constance.Constant;
+import constants.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 

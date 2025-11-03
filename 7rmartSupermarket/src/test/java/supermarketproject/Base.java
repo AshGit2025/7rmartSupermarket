@@ -14,7 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
-import constance.Constant;
+import constants.Constant;
 import utilities.ScreenshotUtility;
 
 public class Base {
@@ -23,8 +23,9 @@ public class Base {
 	public Properties properties;
 	public FileInputStream fis;
 
-	@BeforeMethod
+	
 	@Parameters("browser")
+	@BeforeMethod(alwaysRun = true)
 	public void browserInitialising(String browser) throws Exception {
 		try {
 			properties = new Properties();
@@ -57,7 +58,7 @@ public class Base {
 
 	}
 
-	@AfterMethod
+	@AfterMethod (alwaysRun = true)
 	public void captureScreenshotWhenTestCaseFail(ITestResult itResult) throws IOException {
 		if (itResult.getStatus() == ITestResult.FAILURE) {
 			ScreenshotUtility sc = new ScreenshotUtility();

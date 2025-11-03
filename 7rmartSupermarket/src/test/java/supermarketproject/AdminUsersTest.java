@@ -3,7 +3,7 @@ package supermarketproject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import constance.Constant;
+import constants.Constant;
 import pages.AdminUsers;
 import pages.HomePage;
 import pages.LoginPage;
@@ -14,7 +14,7 @@ public class AdminUsersTest extends Base {
 	AdminUsers adminUsers;
 	
 	
-  @Test(description = "verified new admin user addedd successfully")
+  @Test(description = "verified new admin user addedd successfully", groups= {"Sanity"})
   public void createNewAdminUser() 
   {
 	  LoginPage login = new LoginPage(driver);
