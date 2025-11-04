@@ -15,7 +15,7 @@ import org.openqa.selenium.io.FileHandler;
 public class ScreenshotUtility {
 
 	public void captureFailureScreenShot(WebDriver driver, String name) throws IOException {
-		TakesScreenshot scrShot = (TakesScreenshot) driver;
+		TakesScreenshot scrShot = (TakesScreenshot) driver;// TakeScreenshot is the interface help to take screenshot
 		File screenShot = scrShot.getScreenshotAs(OutputType.FILE); // screenshot will store in temporary path
 																	// "screenShot
 		File f1 = new File(System.getProperty("user.dir") + "\\OutputScreenshots");// Generating folder using Java

@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
 
-	@Test
+	@Test(description = "To check login with valid credential")
 	@Parameters({"Username", "Password"})
 	  	  public void verifyValidCredentials(String Username, String Password)
 	  {

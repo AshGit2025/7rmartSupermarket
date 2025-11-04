@@ -14,7 +14,7 @@ public class AdminUsers {
 	
 	// Section1 --> Driver  & PageFactory initial
 	// Section2 --> @FindBy elements using Locators
-    // Section3 --> Methods
+    // Section3 --> Methods with chaining of methods and chaining of pages
 	// Section4 --> Assertion element defining method
 	
 	
