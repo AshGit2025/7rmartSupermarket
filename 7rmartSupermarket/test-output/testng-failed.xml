@@ -18,6 +18,13 @@
           <include name="browserInitialising"/>
         </methods>
       </class> <!-- supermarketproject.AdminUsersTest -->
+      <class name="supermarketproject.HomePageTest">
+        <methods>
+          <include name="verifyLogout"/>
+          <include name="captureScreenshotWhenTestCaseFail"/>
+          <include name="browserInitialising"/>
+        </methods>
+      </class> <!-- supermarketproject.HomePageTest -->
     </classes>
   </test> <!-- chrometest(failed) -->
 </suite> <!-- Failed suite [ParallelTesting] -->

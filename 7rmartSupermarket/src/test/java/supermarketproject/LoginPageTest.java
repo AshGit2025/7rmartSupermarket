@@ -35,14 +35,24 @@ public class LoginPageTest extends Base {
 		  String Password=ExcelUtility.getIntegerData(1, 1, "LoginPageTest");
 		  login.enterUsernameAndPassword(Username,Password);
 		  login.clickOnLoginButton();
+		  
+		//checking assertion
+		  boolean isHomePage=login.isHomePageDisplayed();
+		  Assert.assertTrue(isHomePage, Constant.ERRORMESSAGEFORLOGIN);
 	  }
 
 	  @Test (groups = {"Smoke"})
-	  public void verifycredentialsWithCorrectPassword() 
+	  public void verifycredentialsWithCorrectPassword() throws IOException 
 	  {
 		  LoginPage login = new LoginPage(driver);
-		  login.enterUsernameAndPassword("ASHHHH", "admin");
+		  String Username=ExcelUtility.getStringData(3, 0,"LoginPageTest");
+		  String Password=ExcelUtility.getStringData(3, 1, "LoginPageTest");
+		  login.enterUsernameAndPassword(Username, Password);
 		  login.clickOnLoginButton();
+		  
+		//checking assertion
+		  boolean isHomePage=login.isHomePageDisplayed();
+		  Assert.assertTrue(isHomePage, Constant.ERRORMESSAGEFORLOGIN);
 	  }
 	  
 	  @Test (dataProvider = "dataProvider")
@@ -51,6 +61,10 @@ public class LoginPageTest extends Base {
 		  LoginPage login = new LoginPage(driver);
 		  login.enterUsernameAndPassword(Username, Password);
 		  login.clickOnLoginButton();
+		  
+		//checking assertion
+		  boolean isHomePage=login.isHomePageDisplayed();
+		  Assert.assertTrue(isHomePage, Constant.ERRORMESSAGEFORLOGIN);
 	  }
 	  
 	  @DataProvider(name="dataProvider")

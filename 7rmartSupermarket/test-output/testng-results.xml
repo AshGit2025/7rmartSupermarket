@@ -1,11 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results retried="1" ignored="1" total="5" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-03T09:42:23 GMT" name="Suite" finished-at="2025-11-03T09:42:23 GMT" duration-ms="38">
+  <suite started-at="2025-11-10T06:43:14 GMT" name="ParallelTesting" finished-at="2025-11-10T06:43:38 GMT" duration-ms="24024">
     <groups>
+      <group name="Sanity">
+        <method signature="AdminUsersTest.createNewAdminUser()[pri:0, instance:supermarketproject.AdminUsersTest@22d7b4f8]" name="createNewAdminUser" class="supermarketproject.AdminUsersTest"/>
+      </group> <!-- Sanity -->
     </groups>
-    <test started-at="2025-11-03T09:42:23 GMT" name="GroupingTests" finished-at="2025-11-03T09:42:23 GMT" duration-ms="38">
-    </test> <!-- GroupingTests -->
-  </suite> <!-- Suite -->
+    <test started-at="2025-11-10T06:43:14 GMT" name="chrometest" finished-at="2025-11-10T06:43:38 GMT" duration-ms="24024">
+      <class name="supermarketproject.HomePageTest">
+        <test-method is-config="true" signature="browserInitialising(java.lang.String)[pri:0, instance:supermarketproject.HomePageTest@32f232a5]" started-at="2025-11-10T06:43:14 GMT" name="browserInitialising" finished-at="2025-11-10T06:43:26 GMT" duration-ms="12014" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialising -->
+        <test-method retried="true" signature="verifyLogout()[pri:0, instance:supermarketproject.HomePageTest@32f232a5]" started-at="2025-11-10T06:43:26 GMT" name="verifyLogout" description="Verified logout after admin login" finished-at="2025-11-10T06:43:27 GMT" duration-ms="1179" status="SKIP">
+          <exception class="java.io.IOException">
+            <message>
+              <![CDATA[Stream Closed]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.IOException: Stream Closed
+at java.base/java.io.FileInputStream.available0(Native Method)
+at java.base/java.io.FileInputStream.available(FileInputStream.java:473)
+at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:428)
+at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:399)
+at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+at java.base/java.io.PushbackInputStream.read(PushbackInputStream.java:197)
+at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.fill(ZipArchiveInputStream.java:541)
+at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.readFromInflater(ZipArchiveInputStream.java:1071)
+at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.readDeflated(ZipArchiveInputStream.java:998)
+at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.read(ZipArchiveInputStream.java:929)
+at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.read(ZipArchiveThresholdInputStream.java:78)
+at org.apache.poi.util.IOUtils.toByteArray(IOUtils.java:271)
+at org.apache.poi.util.IOUtils.toByteArray(IOUtils.java:235)
+at org.apache.poi.openxml4j.util.ZipArchiveFakeEntry.<init>(ZipArchiveFakeEntry.java:93)
+at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:114)
+at org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:211)
+at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:315)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:289)
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:23)
+at supermarketproject.HomePageTest.verifyLogout(HomePageTest.java:22)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.IOException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogout -->
+        <test-method is-config="true" signature="captureScreenshotWhenTestCaseFail(org.testng.ITestResult)[pri:0, instance:supermarketproject.HomePageTest@32f232a5]" started-at="2025-11-10T06:43:27 GMT" name="captureScreenshotWhenTestCaseFail" finished-at="2025-11-10T06:43:28 GMT" duration-ms="1420" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLogout status=SKIP method=HomePageTest.verifyLogout()[pri:0, instance:supermarketproject.HomePageTest@32f232a5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshotWhenTestCaseFail -->
+        <test-method is-config="true" signature="browserInitialising(java.lang.String)[pri:0, instance:supermarketproject.HomePageTest@32f232a5]" started-at="2025-11-10T06:43:28 GMT" name="browserInitialising" finished-at="2025-11-10T06:43:32 GMT" duration-ms="3856" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialising -->
+        <test-method signature="verifyLogout()[pri:0, instance:supermarketproject.HomePageTest@32f232a5]" started-at="2025-11-10T06:43:32 GMT" name="verifyLogout" description="Verified logout after admin login" finished-at="2025-11-10T06:43:37 GMT" duration-ms="4901" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogout -->
+        <test-method is-config="true" signature="captureScreenshotWhenTestCaseFail(org.testng.ITestResult)[pri:0, instance:supermarketproject.HomePageTest@32f232a5]" started-at="2025-11-10T06:43:37 GMT" name="captureScreenshotWhenTestCaseFail" finished-at="2025-11-10T06:43:38 GMT" duration-ms="495" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLogout status=SUCCESS method=HomePageTest.verifyLogout()[pri:0, instance:supermarketproject.HomePageTest@32f232a5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshotWhenTestCaseFail -->
+      </class> <!-- supermarketproject.HomePageTest -->
+      <class name="supermarketproject.ManageCategoryTest">
+        <test-method is-config="true" signature="browserInitialising(java.lang.String)[pri:0, instance:supermarketproject.ManageCategoryTest@2df6226d]" started-at="2025-11-10T06:43:14 GMT" name="browserInitialising" finished-at="2025-11-10T06:43:25 GMT" duration-ms="11352" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialising -->
+        <test-method signature="ToVerifyAddNewCategory()[pri:0, instance:supermarketproject.ManageCategoryTest@2df6226d]" started-at="2025-11-10T06:43:25 GMT" name="ToVerifyAddNewCategory" finished-at="2025-11-10T06:43:26 GMT" duration-ms="979" status="FAIL">
+          <exception class="org.apache.poi.EmptyFileException">
+            <message>
+              <![CDATA[The supplied file was empty (zero bytes long)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.apache.poi.EmptyFileException: The supplied file was empty (zero bytes long)
+at org.apache.poi.util.IOUtils.peekFirstNBytes(IOUtils.java:157)
+at org.apache.poi.poifs.filesystem.FileMagic.valueOf(FileMagic.java:209)
+at org.apache.poi.openxml4j.opc.internal.ZipHelper.verifyZipHeader(ZipHelper.java:147)
+at org.apache.poi.openxml4j.opc.internal.ZipHelper.openZipStream(ZipHelper.java:191)
+at org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:210)
+at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:315)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:289)
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:23)
+at supermarketproject.ManageCategoryTest.ToVerifyAddNewCategory(ManageCategoryTest.java:25)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.poi.EmptyFileException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ToVerifyAddNewCategory -->
+        <test-method is-config="true" signature="captureScreenshotWhenTestCaseFail(org.testng.ITestResult)[pri:0, instance:supermarketproject.ManageCategoryTest@2df6226d]" started-at="2025-11-10T06:43:26 GMT" name="captureScreenshotWhenTestCaseFail" finished-at="2025-11-10T06:43:28 GMT" duration-ms="2161" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ToVerifyAddNewCategory status=FAILURE method=ManageCategoryTest.ToVerifyAddNewCategory()[pri:0, instance:supermarketproject.ManageCategoryTest@2df6226d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshotWhenTestCaseFail -->
+      </class> <!-- supermarketproject.ManageCategoryTest -->
+      <class name="supermarketproject.AdminUsersTest">
+        <test-method is-config="true" signature="browserInitialising(java.lang.String)[pri:0, instance:supermarketproject.AdminUsersTest@22d7b4f8]" started-at="2025-11-10T06:43:14 GMT" name="browserInitialising" finished-at="2025-11-10T06:43:26 GMT" duration-ms="11946" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialising -->
+        <test-method signature="createNewAdminUser()[pri:0, instance:supermarketproject.AdminUsersTest@22d7b4f8]" started-at="2025-11-10T06:43:26 GMT" name="createNewAdminUser" description="verified new admin user addedd successfully" finished-at="2025-11-10T06:43:27 GMT" duration-ms="959" status="FAIL">
+          <exception class="org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException">
+            <message>
+              <![CDATA[No valid entries or contents found, this is not a valid OOXML (Office Open XML) file]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException: No valid entries or contents found, this is not a valid OOXML (Office Open XML) file
+at org.apache.poi.openxml4j.opc.ZipPackage.getPartsImpl(ZipPackage.java:400)
+at org.apache.poi.openxml4j.opc.OPCPackage.getParts(OPCPackage.java:950)
+at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:523)
+at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:315)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:289)
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:23)
+at supermarketproject.AdminUsersTest.createNewAdminUser(AdminUsersTest.java:25)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewAdminUser -->
+        <test-method is-config="true" signature="captureScreenshotWhenTestCaseFail(org.testng.ITestResult)[pri:0, instance:supermarketproject.AdminUsersTest@22d7b4f8]" started-at="2025-11-10T06:43:27 GMT" name="captureScreenshotWhenTestCaseFail" finished-at="2025-11-10T06:43:28 GMT" duration-ms="1602" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createNewAdminUser status=FAILURE method=AdminUsersTest.createNewAdminUser()[pri:0, instance:supermarketproject.AdminUsersTest@22d7b4f8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshotWhenTestCaseFail -->
+      </class> <!-- supermarketproject.AdminUsersTest -->
+    </test> <!-- chrometest -->
+  </suite> <!-- ParallelTesting -->
 </testng-results>

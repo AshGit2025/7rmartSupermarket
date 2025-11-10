@@ -1,5 +1,7 @@
 package supermarketproject;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -7,6 +9,7 @@ import constants.Constant;
 import pages.AdminUsers;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
@@ -14,15 +17,19 @@ public class AdminUsersTest extends Base {
 	AdminUsers adminUsers;
 	
 	
+	
   @Test(description = "verified new admin user addedd successfully", groups= {"Sanity"})
-  public void createNewAdminUser() 
+  public void createNewAdminUser() throws IOException 
   {
 	  LoginPage login = new LoginPage(driver);
-	  login.enterUsernameAndPassword("admin", "admin");
+	  String Username=ExcelUtility.getStringData(1, 0,"AdminLoginCredential");
+	  String Password=ExcelUtility.getStringData(1, 1, "AdminLoginCredential");
+	  
+	  login.enterUsernameAndPassword(Username, Password);
 	  homePage= login.clickOnLoginButton();
 	  adminUsers= homePage.clickOnAdminUserTile();
-	  String Username= FakerUtility.getFirstname();
-	  String Password= FakerUtility.getPassword();
+	  String adminUsername= FakerUtility.getFirstname();
+	  String adminPassword= FakerUtility.getPassword();
 	  adminUsers.createNewAdminUser().enterAdminUsernameAndPassword(Username, Password)
 	  .clickUserTypefield().clickOnSaveButton();
 	 
